@@ -1,0 +1,283 @@
+<!doctype html>
+<html style="width:100%;height:100%;">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<title>163 Final Project</title>
+</head>
+
+<body style="width:100%;height:100%;margin: 0;">
+	<style>
+		.container {
+        position: relative;
+		}
+		svg{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+		ul, form {
+			z-index: 0;
+			float: right;
+		}
+		ul {
+			top: 0;
+			left: 0;
+			float: left;
+		}
+		#myImage {
+			z-index: 2;
+			position: absolute;
+			bottom: -930px;
+			right: 1200px;
+			width: 24%;
+		}
+		#toggleButton{
+			position: absolute;
+			bottom: -600px;
+			right: 1700px;
+			padding: 20px;
+		}
+		#myText{
+			display: none;
+			position: absolute;
+			font-size: 20px;
+			font-family: Arial;
+			bottom: -930px;
+			right: 550px;
+		}
+
+	</style>
+	
+	<div class="container">
+		<div>
+			<p id="myText">From the correlation table and heatmap, <br>
+				it can be inffered that multi-collinearity between <br>
+				different supposedly independent variables exist <br>
+				in ranges from low to medium (0.11 < r < 0.68). <br>
+				The independent variables are Time spent, Sex, <br>
+				Age, scores of ADHD, anxiety, self esteem <br>
+				and depression. <br> <br>
+
+				Age seems to have negative low colinearity values <br>
+				against the other variables. <br> <br>
+				
+				Sex seems to have low colinearity values for all <br>
+				other variables. <br> <br>
+				Credit: https://colab.research.google.com/drive/1p7P6lL1QUw1T<br>
+				tyUD1odNR4M6TVJK7IYN</p>
+			
+			<svg width="1600px" height="700px"></svg>
+			<ul class = "fbrs">
+				Inputs
+				<li><input type="checkbox" id="single" name="single" class="filterButtonsRS" autocomplete = "off">Single</li>
+				<li><input type="checkbox" id="married" name="married" class="filterButtonsRS" autocomplete = "off">Married</li>
+				<li><input type="checkbox" id="other" name="other" class="filterButtonsRS" autocomplete = "off">Other</li>
+			</ul>
+	
+			<ul class = "fbout">
+				Outputs
+				<li><input type="checkbox" id="adhd" name="ADHD" class="filterButtonsOut" autocomplete = "off">ADHD</li>
+				<li><input type="checkbox" id="anxiety" name="Anxiety" class="filterButtonsOut" autocomplete = "off">Anxiety</li>
+				<li><input type="checkbox" id="selfEsteem" name="Self-Esteem" class="filterButtonsOut" autocomplete = "off">Self Esteem</li>
+				<li><input type="checkbox" id="depression" name="Depression" class="filterButtonsOut" autocomplete = "off">Depression</li>
+			</ul>
+		</div>
+	
+		<form id="survey-form">
+			<label for="Age">Age:</label><br>
+			<input type="number" id="Age" name="1. What is your age?"><br>
+			<label for="Gender">Gender:</label><br>
+			<select id="Gender" name="2. Gender">
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select><br>
+			<label for="3. Relationship Status">Relationship Status:</label><br>
+			<select id="3. Relationship Status" name="3. Relationship Status">
+				<option value="Single">Single</option>
+				<option value="Married">Married</option>
+				<option value="Other">Other</option>
+			</select><br>
+			<label for="8. What is the average time you spend on social media every day?">What is the average time you spend on social media every day?</label><br>
+			<select id="8. What is the average time you spend on social media every day?" name="8. What is the average time you spend on social media every day?">
+				<option value="Less than an Hour">Less than an Hour</option>
+				<option value="Between 1 and 2 hours">Between 1 and 2 hours</option>
+				<option value="Between 2 and 3 hours">Between 2 and 3 hours</option>
+				<option value="Between 3 and 4 hours">Between 3 and 4 hours</option>
+				<option value="Between 4 and 5 hours">Between 4 and 5 hours</option>
+				<option value="More than 5 hours">More than 5 hours</option>
+			</select><br>
+			<label for="9. How often do you find yourself using Social media without a specific purpose?">How often do you find yourself using Social media without a <br> 
+				specific purpose?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="9. How often do you find yourself using Social media without a specific purpose?" name="9. How often do you find yourself using Social media without a specific purpose?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="10. How often do you get distracted by Social media when you are busy doing something?">How often do you get distracted by Social media when <br>
+				you are busy doing something?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="10. How often do you get distracted by Social media when you are busy doing something?" name="10. How often do you get distracted by Social media when you are busy doing something?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="11. Do you feel restless if you haven't used Social media in a while?">How often do you find yourself using Social media without a specific purpose?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="11. Do you feel restless if you haven't used Social media in a while?" name="11. Do you feel restless if you haven't used Social media in a while?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="12. On a scale of 1 to 5, how easily distracted are you?">On a scale of 1 to 5, how easily distracted are you?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="12. On a scale of 1 to 5, how easily distracted are you?" name="12. On a scale of 1 to 5, how easily distracted are you?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="13. On a scale of 1 to 5, how much are you bothered by worries?">On a scale of 1 to 5, how much are you bothered by worries?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="13. On a scale of 1 to 5, how much are you bothered by worries?" name="13. On a scale of 1 to 5, how much are you bothered by worries?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="14. Do you find it difficult to concentrate on things?">Do you find it difficult to concentrate on things?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="14. Do you find it difficult to concentrate on things?" name="14. Do you find it difficult to concentrate on things?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="15. On a scale of 1-5, how often do you compare yourself to other successful people through the use of social media?">
+				On a scale of 1-5, how often do you compare yourself to other successful <br> 
+				people through the use of social media?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="15. On a scale of 1-5, how often do you compare yourself to other successful people through the use of social media?" name="15. On a scale of 1-5, how often do you compare yourself to other successful people through the use of social media?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="16. Following the previous question, how do you feel about these comparisons, generally speaking?">Following the previous question, how do you feel about these <br>
+				comparisons, generally speaking?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="16. Following the previous question, how do you feel about these comparisons, generally speaking?" name="16. Following the previous question, how do you feel about these comparisons, generally speaking?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="17. How often do you look to seek validation from features of social media?">How often do you look to seek validation from features of social media?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="17. How often do you look to seek validation from features of social media?" name="17. How often do you look to seek validation from features of social media?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="18. How often do you feel depressed or down?">How often do you feel depressed or down?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="18. How often do you feel depressed or down?" name="18. How often do you feel depressed or down?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="19. On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?">On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="19. On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?" name="19. On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<label for="20. On a scale of 1 to 5, how often do you face issues regarding sleep?">On a scale of 1 to 5, how often do you face issues regarding sleep?</label><br>
+			<!-- <input type="number" id="adhd" name="adhd" min="1" max="5"><br> -->
+			<select id="20. On a scale of 1 to 5, how often do you face issues regarding sleep?" name="20. On a scale of 1 to 5, how often do you face issues regarding sleep?">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+			<input type="submit" value="Submit">
+		</form>
+		<button id="toggleButton">Toggle Correlation Plot</button>
+		<img id="myImage" src="Correlation.png" style="display: none">
+	</div>
+	
+	
+	<!-- <input type="checkbox" id="male" name="check1" class="filterButtons" autocomplete = "off">
+	<label for="check1">Male</label>
+	<input type="checkbox" id="female" name="check2" class="filterButtons" autocomplete = "off">
+	<label for="check1">Female</label>
+	<input type="checkbox" id="otherUnsure" name="check3" class="filterButtons" autocomplete = "off">
+	<label for="check1">Other/Unsure</label>
+	<br> -->
+	
+	<!-- <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+	<script>
+		// use an async context to call onnxruntime functions.
+		async function main() {
+			try {
+				// create a new session and load the specific model.
+				//
+				// the model in this example contains a single MatMul node
+				// it has 2 inputs: 'a'(float32, 3x4) and 'b'(float32, 4x3)
+				// it has 1 output: 'c'(float32, 3x3)
+				const session = await ort.InferenceSession.create('./model.ort');
+
+				// prepare inputs. a tensor need its corresponding TypedArray as data
+				const dataA = Float32Array.from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+				const dataB = Float32Array.from([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]);
+				const tensorA = new ort.Tensor('float32', dataA, [3, 4]);
+				const tensorB = new ort.Tensor('float32', dataB, [4, 3]);
+
+				// prepare feeds. use model input names as keys.
+				const feeds = { a: tensorA, b: tensorB };
+
+				// feed inputs and run
+				const results = await session.run(feeds);
+
+				// read from results
+				const dataC = results.c.data;
+				document.write(`data of result tensor 'c': ${dataC}`);
+
+			} catch (e) {
+				document.write(`failed to inference ONNX model: ${e}.`);
+			}
+		}
+
+		main();
+	</script> -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="main.js"></script>
+	<script>
+
+	</script>
+</body>
+
+</html>
