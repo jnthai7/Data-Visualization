@@ -11,6 +11,5 @@
  - Optionally, take the survey on the right and submit to add your data among present data intended for direct comparison.
 
 ## Remarks
- - Current deployment set to work on Anthony's laptop.
  - Developed using absolute positioning on Firefox 1920x1080.
  - May look abnormal on other resolutions
