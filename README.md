@@ -1,4 +1,4 @@
-# ECS163-Final-Project
+# Data Visualization
 ## Functionalities
  - The left side has checkbox interactions used to select data presented on the parallel plot.
  - The right side has a survey that the audience could take and submit data to the plot for direct comparison to others that are part of the data.
